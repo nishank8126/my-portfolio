@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <!-- Apply saved theme before first paint (no flash) -->
+    <script src="js/theme-init.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CR12LSJJDY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CR12LSJJDY');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nishan K</title>
+    <meta name="title" content="Nishan K">
+    <meta name="description" content="Software Engineer & Cybersecurity Researcher">
+    <meta name="keywords"
+        content="nisarga adhikary, nisarga, ni5arga, software engineer, cybersecurity, cybersecurity researcher, research, ctf player, student, adhikary nisarga">
+    <meta name="author" content="Nishan K">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ni5arga.com/">
+    <meta property="og:title" content="Nishan K">
+    <meta property="og:description" content="Software Engineer & Cybersecurity Researcher">
+    <meta property="og:image" content="https://ni5arga.com/pfps-in-rotation/nisarga_face_pfp.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ni5arga">
+    <meta name="twitter:creator" content="@ni5arga">
+    <meta name="twitter:title" content="Nishan K">
+    <meta name="twitter:description" content="Software Engineer & Cybersecurity Researcher">
+    <meta name="twitter:image" content="https://github.com/ni5arga.png">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://ni5arga.com/">
+
+    <script defer src="js/theme-toggle.js"></script>
+
+    <style>
+        /* ─── CSS Variables ─── */
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap');
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: clip;
+            width: 100%;
+            max-width: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: clip;
+            width: 100%;
+            max-width: 100%;
+            min-height: 100vh;
+        }
+
+        :root {
+            --transition: 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+            --font-mono: 'SF Mono', ui-monospace, 'Cascadia Code', Monaco, monospace;
+        }
+
+        /* ─── Light Mode (sakura) ─── */
+        html[data-theme="light"] {
+            --bg: #fbfbfa;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --text: #111110;
+            --text-secondary: #3c3c3a;
+            --text-tertiary: #6e6e6a;
+            --text-quaternary: #9b9b96;
+            --accent: #111110;
+            --accent-hover: #000000;
+            --accent-light: rgba(17, 17, 16, 0.06);
+            --link: #111110;
+            --link-hover: #000000;
+            --border: rgba(17, 17, 16, 0.13);
+            --hover-bg: rgba(17, 17, 16, 0.04);
+            --shadow-sm: none;
+            --shadow-md: none;
+            --shadow-lg: none;
+            --code-bg: rgba(17, 17, 16, 0.05);
+            --pill-bg: #111110;
+            --pill-text: #fbfbfa;
+            --footer-bg: #fbfbfa;
+            --footer-text: #111110;
+            --footer-text-dim: rgba(17, 17, 16, 0.5);
+        }
+
+        /* ─── Dark Mode ─── */
+        html[data-theme="dark"] {
+            --bg: #000000;
+            --bg-secondary: #0a0a0a;
+            --bg-card: #0b0b0b;
+            --text: #ebebe9;
+            --text-secondary: #b8b8b4;
+            --text-tertiary: #8a8a85;
+            --text-quaternary: #5f5f5b;
+            --accent: #ebebe9;
+            --accent-hover: #ffffff;
+            --accent-light: rgba(235, 235, 233, 0.08);
+            --link: #ebebe9;
+            --link-hover: #ffffff;
+            --border: rgba(235, 235, 233, 0.13);
+            --hover-bg: rgba(235, 235, 233, 0.05);
+            --shadow-sm: none;
+            --shadow-md: none;
+            --shadow-lg: none;
+            --code-bg: rgba(235, 235, 233, 0.07);
+            --pill-bg: #ebebe9;
+            --pill-text: #000000;
+            --footer-bg: #000000;
+            --footer-text: #ebebe9;
+            --footer-text-dim: rgba(235, 235, 233, 0.45);
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            position: relative;
+        }
+
+        /* Fallback for browsers without View Transitions */
+        body {
+            transition: background-color 0.35s cubic-bezier(0.65, 0, 0.35, 0.5),
+                        color 0.35s cubic-bezier(0.65, 0, 0.35, 0.5);
+        }
+
+        /* ─── Eclipse theme transition ───
+           The new theme blooms out of the toggle button as a circle that
+           starts soft-blurred and resolves sharp as it expands. */
+        ::view-transition-old(root),
+        ::view-transition-new(root) {
+            animation: none;
+            mix-blend-mode: normal;
+        }
+
+        ::view-transition-old(root) { z-index: 0; }
+
+        ::view-transition-new(root) {
+            z-index: 1;
+            animation: eclipse-reveal 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        @keyframes eclipse-reveal {
+            from {
+                clip-path: circle(0% at var(--theme-origin, 50% 50%));
+                filter: blur(6px);
+            }
+            to {
+                clip-path: circle(150% at var(--theme-origin, 50% 50%));
+                filter: blur(0);
+            }
+        }
+
+        /* Pin the button above the wipe so the origin lines up and it never flickers */
+        .theme-toggle { view-transition-name: theme-toggle; }
+
+        ::view-transition-group(theme-toggle) {
+            z-index: 210;
+            animation: toggle-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        ::view-transition-old(theme-toggle),
+        ::view-transition-new(theme-toggle) { animation: none; }
+
+        @keyframes toggle-pop {
+            0%   { transform: none; }
+            45%  { transform: scale(1.18); }
+            100% { transform: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body { transition: none; }
+            ::view-transition-old(root),
+            ::view-transition-new(root),
+            ::view-transition-group(theme-toggle) { animation: none; }
+        }
+
+        ::selection {
+            background: var(--accent-light);
+            color: var(--text);
+        }
+
+        /* ─── Theme Toggle ─── */
+        .theme-toggle {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 200;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            -webkit-backdrop-filter: blur(20px) saturate(140%);
+            backdrop-filter: blur(20px) saturate(140%);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+        }
+
+        .theme-toggle:active { transform: translateY(0) scale(0.96); }
+
+        /* Icons stack on top of each other and morph: the outgoing one
+           shrinks away with a spin, the incoming one springs in. */
+        .theme-toggle svg {
+            position: absolute;
+            transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        opacity 0.25s ease;
+        }
+
+        html[data-theme="light"] .sun-icon,
+        html[data-theme="dark"] .moon-icon {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        html[data-theme="light"] .moon-icon,
+        html[data-theme="dark"] .sun-icon {
+            opacity: 0;
+            transform: scale(0.3) rotate(90deg);
+            pointer-events: none;
+        }
+
+        /* One-shot ring pulse on click — a small "signal" ripple from the button */
+        .theme-toggle.is-pulsing::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            border: 1px solid var(--accent);
+            animation: ring-pulse 0.6s ease-out forwards;
+            pointer-events: none;
+        }
+
+        @keyframes ring-pulse {
+            from { transform: scale(1);  opacity: 0.6; }
+            to   { transform: scale(2.3); opacity: 0; }
+        }
+
+        /* ─── Homepage Hero ─── */
+        body.home-page {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            margin-top: auto;
+            padding: 36px 24px 0;
+        }
+
+        .hero-content {
+            max-width: 560px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .hero-id {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+            margin-bottom: 30px;
+        }
+
+        .avatar-frame {
+            width: 72px;
+            height: 72px;
+            aspect-ratio: 1 / 1;
+            flex: none;
+            border-radius: 9px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .home-page .avatar {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.45s ease;
+        }
+
+        .home-page .avatar.is-swapping { opacity: 0; }
+
+        .hero-name {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: -0.03em;
+            line-height: 1.0;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+
+        @media (max-width: 640px) {
+            .hero-name { font-size: 2.1rem; }
+            .hero-id { gap: 13px; }
+            .avatar-frame { width: 62px; height: 62px; border-radius: 8px; }
+        }
+
+        .hero-aka {
+            color: var(--text-tertiary);
+            font-size: 15px;
+            margin-bottom: 0;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            text-transform: lowercase;
+        }
+
+        .hero-bio {
+            color: var(--text-secondary);
+            font-size: 15.5px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .hero-bio:last-of-type {
+            margin-bottom: 26px;
+        }
+
+        .hero-bio a {
+            color: var(--text);
+            font-weight: 500;
+            text-decoration: underline;
+            text-decoration-color: var(--border);
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1.5px;
+            transition: text-decoration-color var(--transition);
+        }
+
+        .hero-bio a:hover {
+            text-decoration-color: var(--text);
+        }
+
+        /* ─── Hero links ─── */
+        .hero-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            flex-wrap: wrap;
+            margin-bottom: 9px;
+        }
+
+        .hero-links a {
+            font-size: 15.5px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            transition: color var(--transition);
+        }
+
+        .hero-links a:hover {
+            color: var(--text);
+            opacity: 1;
+        }
+
+        .link-dot { display: none; }
+
+        /* ─── Footer ─── */
+        .home-footer {
+            width: 100%;
+            max-width: 608px;
+            margin: 0 auto;
+            margin-bottom: auto;
+            padding: 26px 24px 30px;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: var(--font-sans);
+            color: var(--text);
+            letter-spacing: 0.01em;
+            animation: fadeIn 1s ease 0.8s both;
+            pointer-events: none;
+        }
+
+        .footer-dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--text-quaternary);
+            flex-shrink: 0;
+        }
+
+        .footer-time {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ─── Console log styling ─── */
+        <style>pre { font-family: ui-monospace, SF Mono, Monaco, monospace; }</style>
+
+    </style>
+</head>
+
+<body class="home-page">
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+    </button>
+
+    <!-- Hero - single screen, no scroll -->
+    <main class="hero">
+        <div class="hero-content">
+            <div class="hero-id">
+                <div class="avatar-frame">
+                    <img src="/pfps-in-rotation/nisarga_face_pfp.png" alt="Nishan K" class="avatar" id="avatar">
+                </div>
+                <div class="hero-id-text">
+                    <h1 class="hero-name">Nishan K</h1>
+                    <p class="hero-aka">software engineer & cybersecurity researcher</p>
+                </div>
+            </div>
+
+            <p class="hero-bio">
+                Hi, I'm a software engineer, cybersecurity researcher, CTF player, and curious mind deeply interested in open-source, cybersecurity, and
+                digital investigations. I build things for fun (and sometimes they are actually useful).
+            </p>
+
+            <p class="hero-bio">
+                Outside of studying, I'm usually writing code, exploring security challenges, watching anime, reading,
+                listening to music, or taking photos. I've worked at startups and non-profits, and most of my projects
+                are available on <a href="https://github.com/ni5arga" target="_blank">GitHub</a>. I won
+                <a href="https://fossunited.org/hack/fosshack26/p/4rti3m0j0n" target="_blank" rel="noopener noreferrer">FOSS Hack '26</a>,
+                India's largest open-source hackathon. Currently balancing
+                academics, programming, and whatever else catches my interest. My security research has been featured in national & international media outlets like <a href="https://ni5arga.com/press/" target="_blank">BBC</a>, <a href="https://ni5arga.com/press/" target="_blank">Bloomberg</a>, <a href="https://ni5arga.com/press/" target="_blank">India Today</a> & <a href="https://ni5arga.com/press/" target="_blank">multiple others</a>.
+            </p>
+
+            <p class="hero-bio">
+                I'm open to new roles, collaborations, and opportunities. You can see my <a href="/resume.pdf" target="_blank">resume</a>,
+                <a href="/socials/">find me elsewhere</a>, or reach out at
+                <a href="/cdn-cgi/l/email-protection#3c54595050537c5255095d4e5b5d125f5351"><span class="__cf_email__" data-cfemail="09616c6565664967603c687b6e68276a6664">[email&#160;protected]</span></a>.
+            </p>
+
+            <p class="hero-bio">
+                If you're here, chances are I'd enjoy talking to you — I get nerd-sniped easily, and an email about something that recently fascinated you would honestly make my day.
+            </p>
+
+            <div class="hero-links">
+                <a href="/blog/">blog</a>
+                <a href="https://ni5arga.github.io/notes/" target="_blank" rel="noopener noreferrer">notes</a>
+                <a href="/press/">press</a>
+                <a href="https://github.com/ni5arga" target="_blank">github</a>
+                <a href="https://twitter.com/ni5arga" target="_blank">twitter</a>
+                <a href="/cdn-cgi/l/email-protection#375f525b5b5877595e02564550561954585a">email</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="home-footer">
+        <span class="footer-location">New Delhi, India</span>
+        <span class="footer-dot"></span>
+        <span class="footer-time" id="localTime"></span>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Avatar rotation: my own face lingers, the anime ones flick past.
+        (function () {
+            const FACE = 7500, ANIME = 2500, FADE = 450;
+            const ROTATION = [
+                { src: '/pfps-in-rotation/nisarga_face_pfp.png',                 ms: FACE },
+                { src: '/pfps-in-rotation/pfp.jpg',                              ms: ANIME },
+                { src: '/pfps-in-rotation/meowpfp.jpg',                          ms: ANIME },
+                { src: '/pfps-in-rotation/ni5arga_face_actual_clean.jpg',        ms: 10000 },
+                { src: '/pfps-in-rotation/e8756f0c59d0ab0fe415f64ffe7972ba.jpg', ms: ANIME },
+                { src: '/pfps-in-rotation/fumofumo.jpg',                         ms: ANIME },
+            ];
+
+            const img = document.getElementById('avatar');
+            if (!img) return;
+            // Reduce-motion means no crossfade, not a frozen avatar.
+            const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const fade = calm ? 0 : FADE;
+
+            ROTATION.forEach(p => { const pre = new Image(); pre.src = p.src; });
+
+            let i = 0;
+            function apply(p) {
+                img.src = p.src;
+            }
+            function next() {
+                const upcoming = ROTATION[(i + 1) % ROTATION.length];
+                if (!calm) img.classList.add('is-swapping');
+                setTimeout(() => {
+                    i = (i + 1) % ROTATION.length;
+                    apply(upcoming);
+                    img.classList.remove('is-swapping');
+                    setTimeout(next, upcoming.ms);
+                }, fade);
+            }
+            setTimeout(next, ROTATION[0].ms);
+        })();
+
+        // Why are you looking at the source code?
+        // Mail me at hello@ni5arga.com, will love to talk :)
+
+        console.log(
+            '%clooks like you love to poke around,\nwill love to talk — hello@ni5arga.com',
+            'font-family: ui-monospace, SF Mono, Monaco, monospace; font-size: 13px; line-height: 1.6; color: #93c5fd; padding: 8px 0;'
+        );
+
+        function updateClock() {
+            const now = new Date().toLocaleString('en-US', {
+                timeZone: 'Asia/Kolkata',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+            });
+            document.getElementById('localTime').textContent = now + ' IST';
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+
+</html>
